@@ -125,6 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+# collecting static files for production
+STATIC_ROOT = BASE_DIR / "staticfiles"
 # capturing static files for global scope
 STATICFILES_DIRS = [
     BASE_DIR / "static",
@@ -134,3 +136,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# handling media and file uploads
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "uploads"

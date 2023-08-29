@@ -7,30 +7,16 @@
   <link rel="stylesheet" href="{% static 'meetups/style/index.css' %}">
 {% endblock css %}
 
+{% block heading1 %}We got great meetups coming up.{% endblock heading1 %}
+{% block header_content %}<p>Set your schedule now!</p>{% endblock header_content %}
+
 {% block body_content %}
-  <main>
-    <section>
-      <h2>Upcoming Meetups</h2>
-      <ol>
-        {% for meetup in meetups %}
-          <li class="meetup-item">
-            <article>
-              <div class="meetup-summary">
-                <div class="meetup-image">
-                  <img src="" alt="">
-                </div>
-                <div class="meetup-details">
-                  <h3>{{ meetup.title }}</h3>
-                  <address>{{ meetup.location }}</address>
-                </div>
-              </div>
-              <div class="meetup-actions">
-                <a href="" class="btn">More Details</a>
-              </div>
-            </article>
-          </li>
-        {% endfor %}
-      </ol>
-    </section>
-  </main>
+  <section>
+    <h2>Upcoming Meetups</h2>
+    <ol>
+      {% for meetup in meetups %}
+        {% include "meetups/includes/meetup.html" with title=meetup.title location="Philippines" slug=meetup.slug %}
+      {% endfor %}
+    </ol>
+  </section>
 {% endblock body_content %}

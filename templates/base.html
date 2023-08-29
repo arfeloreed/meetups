@@ -12,11 +12,13 @@
 </head>
 <body>
   <header id="main-header">
-    <nav><a href="" id="main-logo">Meetups</a></nav>
-    <h1>We got great meetups coming up.</h1>
-    <p>Set your schedule now!</p>
+    <nav><a href="{% url 'index' %}" id="main-logo">Meetups</a></nav>
+    <h1>{% block heading1 %}{% endblock heading1 %}</h1>
+    {% block header_content %}{% endblock header_content %}
   </header>
 
-  {% block body_content %}{% endblock body_content %}
+  <main>
+    {% block body_content %}{% endblock body_content %}
+  </main>
 </body>
 </html>
